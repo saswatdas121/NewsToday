@@ -9,7 +9,6 @@ function NavigationBar() {
     <Navbar bg="light" expand="lg">
       <Container style={{justifyContent:'center'}}>
        <Link to="/" ><img src={logo} alt="Logo" height="80px" width="200px"/></Link>
-        <Navbar.Brand href="#home" style={{fontSize:'30px'}}><Link to="/" style={{textDecoration:'none',color:'black'}}>NewsToday</Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         
       </Container>
