@@ -13,13 +13,14 @@ function News(props) {
     const [articles,setArticles] =useState([]);
     const [page,setPage] =useState(1);
     const [totalResults,setTotalResults]=useState(0);
+    let api=process.env.REACT_APP_NEWS_API;
    
    
     useEffect(()=>
     {
       const dataFetch=async ()=>
       {
-         let response=await fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=6f838c6fa1a2445ebb0268cc7acd638c&page=${page}&pageSize=6&category=${props.name}`);
+         let response=await fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${api}&page=${page}&pageSize=6&category=${props.name}`);
          let data=await response.json();
          setTotalResults(data.totalResults);
         setArticles(data.articles);
@@ -31,7 +32,7 @@ function News(props) {
     let fetchMoreData =async ()=>
     {
        setPage(page+1);
-       let response=await fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=6f838c6fa1a2445ebb0268cc7acd638c&page=${page}&pageSize=6&category=${props.name}`);
+       let response=await fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${api}&page=${page}&pageSize=6&category=${props.name}`);
        let data=await response.json();
 
        setArticles(articles.concat(data.articles));
