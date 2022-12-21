@@ -1,0 +1,17 @@
+.sub
+{
+    display:flex !important;
+    justify-content:space-between;
+    color:red;
+    width:100%;
+}
+.links
+{
+    text-decoration:none;
+    color:black;
+}
+.links:hover
+{
+    opacity:0.8;
+    color:black;
+}
